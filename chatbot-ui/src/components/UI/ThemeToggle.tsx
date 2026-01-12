@@ -1,5 +1,4 @@
-'use client';
-
+import { flushSync } from 'react-dom';
 import { useTheme } from '@/hooks/useTheme';
 
 const MoonIcon = () => (
@@ -27,10 +26,58 @@ export function ThemeToggle() {
 
     if (!mounted) return null;
 
+    const handleToggle = async (e: React.MouseEvent<HTMLButtonElement>) => {
+        // Fallback for browsers that don't support View Transitions
+        if (!document.startViewTransition) {
+            toggleTheme();
+            return;
+        }
+
+        const button = e.currentTarget;
+        const rect = button.getBoundingClientRect();
+
+        // Get center of button
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        // Calculate radius to the furthest corner
+        const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        );
+
+        const transition = document.startViewTransition(() => {
+            flushSync(() => {
+                toggleTheme();
+            });
+        });
+
+        // Wait for the pseudo-elements to be created
+        await transition.ready;
+
+        // Animate the clip-path
+        // Always grow the NEW view from the click position
+        const clipPath = [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`
+        ];
+
+        document.documentElement.animate(
+            {
+                clipPath: clipPath,
+            },
+            {
+                duration: 700, // Pelan / Slower
+                easing: 'ease-in-out', // Lembut / Smooth
+                pseudoElement: '::view-transition-new(root)',
+            }
+        );
+    };
+
     return (
         <button
             className="theme-toggle-btn"
-            onClick={toggleTheme}
+            onClick={handleToggle}
             aria-label="Toggle theme"
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >

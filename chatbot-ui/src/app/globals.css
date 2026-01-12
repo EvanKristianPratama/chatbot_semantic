@@ -253,12 +253,23 @@ body {
   gap: 12px;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 10px 16px;
+  border-radius: 50px;
+  /* Pill shape */
+  padding: 12px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  /* Subtle modern shadow */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.2s ease;
+  transform: scale(0.95);
+  /* Lebih kecil lagi biar kelihatan bedanya */
+  will-change: transform;
 }
 
+.input-wrapper:hover,
 .input-wrapper:focus-within {
   border-color: var(--text-muted);
+  transform: scale(1.0);
+  /* Kembali ke ukuran normal saat hover/fokus */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .chat-input {
@@ -276,17 +287,23 @@ body {
 }
 
 .send-btn {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border: none;
-  border-radius: 8px;
-  background-color: var(--accent-color);
-  color: var(--bg-primary);
+  background-color: transparent;
+  color: var(--accent-color);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: transform 0.2s ease, opacity 0.2s;
+  padding: 0;
+}
+
+.send-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .send-btn:disabled {
@@ -406,4 +423,20 @@ body {
     padding: 16px;
     padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
+}
+
+/* VIEW TRANSITIONS */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Ensure the dark theme is fully opaque for the transition */
+::view-transition-new(root) {
+  z-index: 2147483646;
+}
+
+::view-transition-old(root) {
+  z-index: 2147483646;
 }

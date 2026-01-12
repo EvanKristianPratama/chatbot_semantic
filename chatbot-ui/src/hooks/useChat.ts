@@ -98,25 +98,43 @@ export function useChat(options?: UseChatOptions) {
     };
 }
 
-// Logic to switch between Real API and Simulation
+// Logic to switch between Real API, Gemini, and Simulation
 async function getBotResponse(userInput: string): Promise<string> {
+    // 1. Try Gemini first (if configured)
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userInput }),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            // Note: The API route returns { success: true, da: text } based on my previous code
+            // But standard practice is data.text or data.response. Let's align with the route code: "da: text"
+            if (data.da) return data.da;
+            if (data.error) console.warn('Gemini Error:', data.error);
+        }
+    } catch (e) {
+        console.warn('Gemini API Unavailable, falling back...', e);
+    }
+
+    // 2. Fallback to PHP API (if enabled)
     if (USE_REAL_API) {
         try {
             const response = await searchProducts(userInput);
             if (response.success && response.data && response.data.length > 0) {
-                // Format products to Markdown
                 const productList = response.data.map(p =>
                     `📱 **${p.listing_title}**\n💰 Rp ${p.price_idr.toLocaleString('id-ID')}\n🏪 ${p.store_name}\n📦 Kondisi: ${p.item_condition}`
                 ).join('\n\n');
-                return `🔍 **Ditemukan ${response.data.length} produk:**\n\n${productList}`;
-            } else {
-                return `❌ Maaf, tidak ditemukan produk untuk "${userInput}" di database.`;
+                return `🔍 **Ditemukan ${response.data.length} produk di Database:**\n\n${productList}`;
             }
         } catch (error) {
-            console.error(error);
-            return `❌ Gagal menghubungi server. Pastikan API PHP berjalan.`;
+            // Ignore and fallthrough to simulation
         }
     }
+
+    // 3. Last Resort: Simulation
     return simulateAIResponse(userInput);
 }
 
