@@ -3,6 +3,10 @@
 import { useState, useCallback, useEffect } from 'react';
 import { Message } from '@/types';
 import { generateId } from '@/lib/utils';
+import { searchProducts } from '@/lib/api';
+
+// Set to true to use Real PHP API, false for Simulation
+const USE_REAL_API = false;
 
 interface UseChatOptions {
     onSend?: (message: string) => Promise<string>;
@@ -42,14 +46,12 @@ export function useChat(options?: UseChatOptions) {
         setIsLoading(true);
 
         try {
-            // Simulate AI response or call actual API
             let botResponse: string;
 
             if (options?.onSend) {
                 botResponse = await options.onSend(content);
             } else {
-                // Fallback to simulated response
-                botResponse = await simulateAIResponse(content);
+                botResponse = await getBotResponse(content);
             }
 
             const botMessage: Message = {
@@ -96,7 +98,29 @@ export function useChat(options?: UseChatOptions) {
     };
 }
 
-// Simulate AI response based on user input
+// Logic to switch between Real API and Simulation
+async function getBotResponse(userInput: string): Promise<string> {
+    if (USE_REAL_API) {
+        try {
+            const response = await searchProducts(userInput);
+            if (response.success && response.data && response.data.length > 0) {
+                // Format products to Markdown
+                const productList = response.data.map(p =>
+                    `📱 **${p.listing_title}**\n💰 Rp ${p.price_idr.toLocaleString('id-ID')}\n🏪 ${p.store_name}\n📦 Kondisi: ${p.item_condition}`
+                ).join('\n\n');
+                return `🔍 **Ditemukan ${response.data.length} produk:**\n\n${productList}`;
+            } else {
+                return `❌ Maaf, tidak ditemukan produk untuk "${userInput}" di database.`;
+            }
+        } catch (error) {
+            console.error(error);
+            return `❌ Gagal menghubungi server. Pastikan API PHP berjalan.`;
+        }
+    }
+    return simulateAIResponse(userInput);
+}
+
+// Simulate AI response based on user input (Fallback)
 async function simulateAIResponse(userMessage: string): Promise<string> {
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
 
@@ -104,7 +128,7 @@ async function simulateAIResponse(userMessage: string): Promise<string> {
 
     // Detect intent and respond accordingly
     if (lowerMessage.includes('samsung')) {
-        return `🔍 **Hasil Pencarian Samsung:**
+        return `🔍 **Hasil Pencarian Samsung (Simulasi):**
 
 📱 **Galaxy S24** (Baru)
 ⚙️ Spek: RAM 8GB, Exynos 2400
@@ -125,7 +149,7 @@ Ada yang ingin ditanyakan lebih lanjut tentang HP Samsung ini? 🤔`;
     }
 
     if (lowerMessage.includes('apple') || lowerMessage.includes('iphone')) {
-        return `🔍 **Hasil Pencarian Apple:**
+        return `🔍 **Hasil Pencarian Apple (Simulasi):**
 
 📱 **iPhone 15 Pro Max** (Baru)
 ⚙️ Spek: RAM 8GB, A17 Pro
@@ -141,7 +165,7 @@ Mau saya bandingkan dengan HP lain? 📊`;
     }
 
     if (lowerMessage.includes('gaming') || lowerMessage.includes('game')) {
-        return `🎮 **Rekomendasi HP Gaming:**
+        return `🎮 **Rekomendasi HP Gaming (Simulasi):**
 
 📱 **ROG Phone 8** (Gaming)
 ⚙️ Spek: RAM 16GB, Snapdragon 8 Gen 3
@@ -163,7 +187,7 @@ Semua HP di atas cocok untuk gaming berat! 🎯`;
     }
 
     if (lowerMessage.includes('murah') || lowerMessage.includes('budget')) {
-        return `💰 **HP Budget Under 5 Juta:**
+        return `💰 **HP Budget Under 5 Juta (Simulasi):**
 
 📱 **Realme C67** (Budget King)
 ⚙️ Spek: RAM 8GB, Snapdragon 685
@@ -184,7 +208,7 @@ Semua pilihan bagus untuk budget terbatas! 👍`;
     }
 
     if (lowerMessage.includes('xiaomi') || lowerMessage.includes('poco') || lowerMessage.includes('redmi')) {
-        return `🔍 **Hasil Pencarian Xiaomi:**
+        return `🔍 **Hasil Pencarian Xiaomi (Simulasi):**
 
 📱 **Poco F5** (Flagship Killer)
 ⚙️ Spek: RAM 12GB, Snapdragon 7+ Gen 2
