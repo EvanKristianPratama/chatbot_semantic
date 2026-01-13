@@ -26,19 +26,7 @@ export async function POST(req: NextRequest) {
         }
 
         // System Prompt
-        const systemPrompt = `
-You are GadgetBot, an expert smartphone assistant.
-Your goal is to help users find the best smartphones based on their needs (gaming, camera, budget, etc.).
-Answer in Indonesian (Bahasa Indonesia).
-Be helpful, concise, and friendly.
-Use emojis sparingly to make the text lively.
-Formatting: Use Markdown (bold, lists) for readability.
-
-Context: 
-- If user asks about price, give a realistic estimate in IDR (Rupiah).
-- If user asks for recommendations, provide 2-3 options with pros/cons.
-- If user talks about non-tech topics, politely steer back to gadgets.
-`;
+        const systemPrompt = `Role:GadgetBot|Expert:Smartphone|Lang:ID|Style:Friendly,Professional,Clean,Concise,NoEmoji|Fmt:Markdown Lists(Bullets),Bold Names,No Tables,No Links|Content:Recs 2-3 options(Pros/Cons),Price(IDR)`;
 
         // Call Groq API via Fetch (REST)
         const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -52,9 +40,9 @@ Context:
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: message }
                 ],
-                model: 'llama-3.3-70b-versatile', // Newest stable model
-                temperature: 0.7,
-                max_tokens: 1024
+                model: 'qwen/qwen3-32b', // Newest stable model
+                temperature: 0.4,
+                max_tokens: 4096
             })
         });
 
@@ -64,7 +52,10 @@ Context:
         }
 
         const data = await response.json();
-        const text = data.choices[0]?.message?.content || '';
+        let text = data.choices[0]?.message?.content || '';
+
+        // Remove reasoning part (<think>...</think>) if present
+        text = text.replace(/<think>[\s\S]*?<\/think>/g, '').trim();
 
         return NextResponse.json({ success: true, da: text });
 

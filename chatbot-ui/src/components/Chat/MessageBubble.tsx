@@ -1,6 +1,7 @@
 import { memo } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Message } from '@/types';
-import { parseMessageContent } from '@/lib/utils';
 
 interface MessageBubbleProps {
     message: Message;
@@ -18,10 +19,11 @@ export const MessageBubble = memo(function MessageBubble({ message }: MessageBub
                 </div>
             )}
 
-            <div
-                className="msg-bubble"
-                dangerouslySetInnerHTML={{ __html: parseMessageContent(message.content) }}
-            />
+            <div className="msg-bubble">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {message.content}
+                </ReactMarkdown>
+            </div>
         </div>
     );
 });
