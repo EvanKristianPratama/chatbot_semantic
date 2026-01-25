@@ -1,0 +1,8 @@
+flask
+flask-cors
+requests
+flask
+flask-cors
+requests
+rdflib
+psycopg2-binary

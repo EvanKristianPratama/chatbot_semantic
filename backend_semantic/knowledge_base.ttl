@@ -1,0 +1,54 @@
+@prefix ex: <http://example.org/gadget#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Definisi Class
+ex:Smartphone rdf:type ex:Class .
+
+# Data Smartphone (Knowledge Base)
+# Format ID SKU harus match dengan yang ada di Database MySQL nanti (misal sku_samsung_a55)
+
+# Samsung
+ex:sku_samsung_s24 a ex:Smartphone ;
+    ex:hasModel "Samsung Galaxy S24" ;
+    ex:hasBrand "Samsung" ;
+    ex:hasRAM 8 ;
+    ex:hasProcessor "Exynos 2400" ;
+    ex:hasStorage 256 .
+
+ex:sku_samsung_s23ultra a ex:Smartphone ;
+    ex:hasModel "Samsung Galaxy S23 Ultra" ;
+    ex:hasBrand "Samsung" ;
+    ex:hasRAM 12 ;
+    ex:hasProcessor "Snapdragon 8 Gen 2" ;
+    ex:hasStorage 512 .
+
+ex:sku_samsung_a05s a ex:Smartphone ;
+    ex:hasModel "Samsung Galaxy A05s" ;
+    ex:hasBrand "Samsung" ;
+    ex:hasRAM 6 ;
+    ex:hasProcessor "Snapdragon 680" ;
+    ex:hasStorage 128 .
+
+# Apple
+ex:sku_iphone_15_pro a ex:Smartphone ;
+    ex:hasModel "iPhone 15 Pro" ;
+    ex:hasBrand "Apple" ;
+    ex:hasRAM 8 ;
+    ex:hasProcessor "A17 Pro" ;
+    ex:hasStorage 256 .
+
+# Xiaomi / Poco
+ex:sku_poco_f5 a ex:Smartphone ;
+    ex:hasModel "Poco F5" ;
+    ex:hasBrand "Poco" ;
+    ex:hasRAM 12 ;
+    ex:hasProcessor "Snapdragon 7+ Gen 2" ;
+    ex:hasStorage 256 .
+
+ex:sku_redmi_note_13 a ex:Smartphone ;
+    ex:hasModel "Redmi Note 13 Pro" ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasRAM 8 ;
+    ex:hasProcessor "Dimensity 6080" ;
+    ex:hasStorage 256 .
