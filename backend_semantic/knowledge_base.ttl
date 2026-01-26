@@ -1,54 +1,1808 @@
 @prefix ex: <http://example.org/gadget#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Definisi Class
-ex:Smartphone rdf:type ex:Class .
+ex:Smartphone a rdfs:Class .
 
-# Data Smartphone (Knowledge Base)
-# Format ID SKU harus match dengan yang ada di Database MySQL nanti (misal sku_samsung_a55)
+ex:batteryCapacity a rdf:Property .
 
-# Samsung
-ex:sku_samsung_s24 a ex:Smartphone ;
-    ex:hasModel "Samsung Galaxy S24" ;
-    ex:hasBrand "Samsung" ;
+ex:hasBrand a rdf:Property .
+
+ex:hasMainCamera a rdf:Property .
+
+ex:hasModel a rdf:Property .
+
+ex:hasPrice a rdf:Property .
+
+ex:hasProcessor a rdf:Property .
+
+ex:hasRAM a rdf:Property .
+
+ex:hasRefreshRate a rdf:Property .
+
+ex:hasStorage a rdf:Property .
+
+ex:hasTelephoto a rdf:Property .
+
+ex:locatedIn a rdf:Property .
+
+ex:sku_acer_nitro_v_16_rtx_5060 a ex:Smartphone ;
+    rdfs:label "Acer Nitro V 16 (RTX 5060)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Acer Nitro V 16 (RTX 5060)" ;
+    ex:hasPrice 18999000 ;
+    ex:hasProcessor "Unknown" ;
     ex:hasRAM 8 ;
-    ex:hasProcessor "Exynos 2400" ;
-    ex:hasStorage 256 .
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Laptop Gaming" ;
+    ex:suitableFor "Professional" .
 
-ex:sku_samsung_s23ultra a ex:Smartphone ;
-    ex:hasModel "Samsung Galaxy S23 Ultra" ;
-    ex:hasBrand "Samsung" ;
-    ex:hasRAM 12 ;
-    ex:hasProcessor "Snapdragon 8 Gen 2" ;
-    ex:hasStorage 512 .
+ex:sku_advan_g10_pro_4-64gb_local_pride a ex:Smartphone ;
+    rdfs:label "Advan G10 Pro 4/64GB Local Pride" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Advan G10 Pro 4/64GB Local Pride" ;
+    ex:hasPrice 999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Advan Official" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
 
-ex:sku_samsung_a05s a ex:Smartphone ;
-    ex:hasModel "Samsung Galaxy A05s" ;
-    ex:hasBrand "Samsung" ;
-    ex:hasRAM 6 ;
-    ex:hasProcessor "Snapdragon 680" ;
-    ex:hasStorage 128 .
-
-# Apple
-ex:sku_iphone_15_pro a ex:Smartphone ;
-    ex:hasModel "iPhone 15 Pro" ;
+ex:sku_apple_pencil_pro_gen_2 a ex:Smartphone ;
+    rdfs:label "Apple Pencil Pro Gen 2" ;
+    ex:batteryCapacity 5000 ;
     ex:hasBrand "Apple" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Apple Pencil Pro Gen 2" ;
+    ex:hasPrice 2499000 ;
+    ex:hasProcessor "Unknown" ;
     ex:hasRAM 8 ;
-    ex:hasProcessor "A17 Pro" ;
-    ex:hasStorage 256 .
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Digimap" ;
+    ex:suitableFor "Elderly",
+        "Ojol",
+        "Student" .
 
-# Xiaomi / Poco
-ex:sku_poco_f5 a ex:Smartphone ;
-    ex:hasModel "Poco F5" ;
-    ex:hasBrand "Poco" ;
+ex:sku_apple_watch_series_11_45mm_aluminum_gps a ex:Smartphone ;
+    rdfs:label "Apple Watch Series 11 45mm Aluminum GPS" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 0 ;
+    ex:hasModel "Apple Watch Series 11 45mm Aluminum GPS" ;
+    ex:hasPrice 7499000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" .
+
+ex:sku_asus_rog_ally_2_z2_extreme a ex:Smartphone ;
+    rdfs:label "ASUS ROG Ally 2 (Z2 Extreme)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Asus" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "ASUS ROG Ally 2 (Z2 Extreme)" ;
+    ex:hasPrice 13999000 ;
+    ex:hasProcessor "AMD Ryzen Z1 Extreme" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "ROG Store ID" ;
+    ex:suitableFor "Gaming" .
+
+ex:sku_asus_rog_phone_10_pro_edition_24gb-1tb a ex:Smartphone ;
+    rdfs:label "ASUS ROG Phone 10 Pro Edition 24GB/1TB" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Asus" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "ASUS ROG Phone 10 Pro Edition 24GB/1TB" ;
+    ex:hasPrice 29999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 24 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 24 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "ROG Store ID" ;
+    ex:suitableFor "Gaming",
+        "Professional" .
+
+ex:sku_asus_rog_phone_9_12-256gb_bekas_fullset a ex:Smartphone ;
+    rdfs:label "ASUS ROG Phone 9 12/256GB (Bekas Fullset)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Asus" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "ASUS ROG Phone 9 12/256GB (Bekas Fullset)" ;
+    ex:hasPrice 11500000 ;
+    ex:hasProcessor "Unknown" ;
     ex:hasRAM 12 ;
-    ex:hasProcessor "Snapdragon 7+ Gen 2" ;
-    ex:hasStorage 256 .
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Hobby Game Jkt" ;
+    ex:suitableFor "Gaming" .
 
-ex:sku_redmi_note_13 a ex:Smartphone ;
-    ex:hasModel "Redmi Note 13 Pro" ;
-    ex:hasBrand "Xiaomi" ;
+ex:sku_asus_zenfone_12_compact_16-256gb a ex:Smartphone ;
+    rdfs:label "Asus Zenfone 12 Compact 16/256GB" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Asus" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Asus Zenfone 12 Compact 16/256GB" ;
+    ex:hasPrice 11999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 16 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Sentra Digital" .
+
+ex:sku_dji_mini_5_pro_rc_2 a ex:Smartphone ;
+    rdfs:label "DJI Mini 5 Pro (RC 2)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "DJI Mini 5 Pro (RC 2)" ;
+    ex:hasPrice 14999000 ;
+    ex:hasProcessor "Unknown" ;
     ex:hasRAM 8 ;
-    ex:hasProcessor "Dimensity 6080" ;
-    ex:hasStorage 256 .
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Drone" .
+
+ex:sku_dji_osmo_pocket_4_creator_combo a ex:Smartphone ;
+    rdfs:label "DJI Osmo Pocket 4 Creator Combo" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "DJI Osmo Pocket 4 Creator Combo" ;
+    ex:hasPrice 10499000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Toko Kamera Jkt" .
+
+ex:sku_evercoss_m60_2-32gb_student_phone a ex:Smartphone ;
+    rdfs:label "Evercoss M60 2/32GB Student Phone" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Evercoss M60 2/32GB Student Phone" ;
+    ex:hasPrice 750000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 2 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 32 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Evercoss Store" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_garmin_fenix_9_solar_sapphire a ex:Smartphone ;
+    rdfs:label "Garmin Fenix 9 Solar Sapphire" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Garmin Fenix 9 Solar Sapphire" ;
+    ex:hasPrice 18999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Garmin ID" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_google_pixel_10_pro_xl_256gb_obsidian_unit_only a ex:Smartphone ;
+    rdfs:label "Google Pixel 10 Pro XL 256GB Obsidian (Unit Only)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Google" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Google Pixel 10 Pro XL 256GB Obsidian (Unit Only)" ;
+    ex:hasPrice 18500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Pixel Indo Community" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_google_pixel_7a_128gb_sea_layar_retak a ex:Smartphone ;
+    rdfs:label "Google Pixel 7a 128GB Sea (Layar Retak)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Google" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Google Pixel 7a 128GB Sea (Layar Retak)" ;
+    ex:hasPrice 2500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Batam" ;
+    ex:soldBy "Toko Hape Batam" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_google_pixel_8_128gb_rose_shadow_tipis a ex:Smartphone ;
+    rdfs:label "Google Pixel 8 128GB Rose (Shadow Tipis)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Google" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Google Pixel 8 128GB Rose (Shadow Tipis)" ;
+    ex:hasPrice 4500000 ;
+    ex:hasProcessor "Tensor G3" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" ;
+    ex:suitableFor "Student" .
+
+ex:sku_google_pixel_9_pro_128gb_hazel_unit_only a ex:Smartphone ;
+    rdfs:label "Google Pixel 9 Pro 128GB Hazel (Unit Only)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Google" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Google Pixel 9 Pro 128GB Hazel (Unit Only)" ;
+    ex:hasPrice 8500000 ;
+    ex:hasProcessor "Tensor G4" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Dunia Gadget" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_gopro_hero_14_black a ex:Smartphone ;
+    rdfs:label "GoPro Hero 14 Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "GoPro Hero 14 Black" ;
+    ex:hasPrice 7999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Toko Kamera Jkt" .
+
+ex:sku_hp_victus_16_rtx_5050 a ex:Smartphone ;
+    rdfs:label "HP Victus 16 (RTX 5050)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "HP Victus 16 (RTX 5050)" ;
+    ex:hasPrice 14999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Laptop Gaming" .
+
+ex:sku_huawei_matepad_pro_11_2026_papermatte a ex:Smartphone ;
+    rdfs:label "Huawei MatePad Pro 11 (2026) PaperMatte" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Huawei" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Huawei MatePad Pro 11 (2026) PaperMatte" ;
+    ex:hasPrice 7999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Huawei Official" .
+
+ex:sku_huawei_watch_gt_6_46mm_brown_leather a ex:Smartphone ;
+    rdfs:label "Huawei Watch GT 6 46mm Brown Leather" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Huawei" ;
+    ex:hasMainCamera 0 ;
+    ex:hasModel "Huawei Watch GT 6 46mm Brown Leather" ;
+    ex:hasPrice 3499000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Huawei Official" ;
+    ex:suitableFor "Student" .
+
+ex:sku_infinix_gt_30_pro_12-256gb_mecha_design a ex:Smartphone ;
+    rdfs:label "Infinix GT 30 Pro 12/256GB Mecha Design" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Infinix" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Infinix GT 30 Pro 12/256GB Mecha Design" ;
+    ex:hasPrice 4299000 ;
+    ex:hasProcessor "MediaTek Dimensity 8200" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Infinix Official" ;
+    ex:suitableFor "Student" .
+
+ex:sku_infinix_hot_50i_8-128gb_black a ex:Smartphone ;
+    rdfs:label "Infinix Hot 50i 8/128GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Infinix" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Infinix Hot 50i 8/128GB Black" ;
+    ex:hasPrice 14500000 ;
+    ex:hasProcessor "MediaTek Helio G88" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Murah Gadget" .
+
+ex:sku_infinix_note_50_vip_12-256gb_200w_charge a ex:Smartphone ;
+    rdfs:label "Infinix Note 50 VIP 12/256GB 200W Charge" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Infinix" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Infinix Note 50 VIP 12/256GB 200W Charge" ;
+    ex:hasPrice 3899000 ;
+    ex:hasProcessor "MediaTek Helio G88" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Infinix Official" ;
+    ex:suitableFor "Student" .
+
+ex:sku_infinix_zero_40_5g_12-256gb_vlog_camera a ex:Smartphone ;
+    rdfs:label "Infinix Zero 40 5G 12/256GB Vlog Camera" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Infinix" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Infinix Zero 40 5G 12/256GB Vlog Camera" ;
+    ex:hasPrice 4599000 ;
+    ex:hasProcessor "MediaTek Helio G88" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Infinix Official" ;
+    ex:suitableFor "Student" .
+
+ex:sku_ipad_11th_gen_64gb_silver a ex:Smartphone ;
+    rdfs:label "iPad 11th Gen 64GB Silver" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPad 11th Gen 64GB Silver" ;
+    ex:hasPrice 6499000 ;
+    ex:hasProcessor "Apple M-Series" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Digimap" .
+
+ex:sku_ipad_air_gen_7_64gb_wi-fi_space_grey a ex:Smartphone ;
+    rdfs:label "iPad Air Gen 7 64GB Wi-Fi Space Grey" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPad Air Gen 7 64GB Wi-Fi Space Grey" ;
+    ex:hasPrice 10999000 ;
+    ex:hasProcessor "Apple M-Series" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" .
+
+ex:sku_ipad_pro_m5_11_inch_256gb_wi-fi a ex:Smartphone ;
+    rdfs:label "iPad Pro M5 11 inch 256GB Wi-Fi" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "iPad Pro M5 11 inch 256GB Wi-Fi" ;
+    ex:hasPrice 16499000 ;
+    ex:hasProcessor "Apple M-Series" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Gudang Apple Jkt" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_iphone_11_128gb_purple_faceid_off a ex:Smartphone ;
+    rdfs:label "iPhone 11 128GB Purple (FaceID Off)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 11 128GB Purple (FaceID Off)" ;
+    ex:hasPrice 3200000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Lucky Cell" ;
+    ex:suitableFor "Student" .
+
+ex:sku_iphone_12_pro_256gb_pacific_blue_fullset_oem a ex:Smartphone ;
+    rdfs:label "iPhone 12 Pro 256GB Pacific Blue (Fullset OEM)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 12 Pro 256GB Pacific Blue (Fullset OEM)" ;
+    ex:hasPrice 5500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "PS Store" .
+
+ex:sku_iphone_13_128gb_midnight_bnib_garansi_distributor a ex:Smartphone ;
+    rdfs:label "iPhone 13 128GB Midnight (BNIB Garansi Distributor)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 13 128GB Midnight (BNIB Garansi Distributor)" ;
+    ex:hasPrice 6999000 ;
+    ex:hasProcessor "A15 Bionic" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Ijo Power Merchant" .
+
+ex:sku_iphone_14_128gb_starlight_ex_inter_imei_aman a ex:Smartphone ;
+    rdfs:label "iPhone 14 128GB Starlight (Ex Inter IMEI Aman)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 14 128GB Starlight (Ex Inter IMEI Aman)" ;
+    ex:hasPrice 7200000 ;
+    ex:hasProcessor "A15 Bionic" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Gudang Apple Jkt" .
+
+ex:sku_iphone_15_128gb_black_ex_ibox_mulus a ex:Smartphone ;
+    rdfs:label "iPhone 15 128GB Black Ex iBox Mulus" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 15 128GB Black Ex iBox Mulus" ;
+    ex:hasPrice 9500000 ;
+    ex:hasProcessor "A16 Bionic" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" .
+
+ex:sku_iphone_16_128gb_pink_new_old_stock a ex:Smartphone ;
+    rdfs:label "iPhone 16 128GB Pink (New Old Stock)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 16 128GB Pink (New Old Stock)" ;
+    ex:hasPrice 12999000 ;
+    ex:hasProcessor "A18" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" .
+
+ex:sku_iphone_16_plus_256gb_blue a ex:Smartphone ;
+    rdfs:label "iPhone 16 Plus 256GB Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 16 Plus 256GB Blue" ;
+    ex:hasPrice 15499000 ;
+    ex:hasProcessor "A18" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Digimap" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_iphone_17_128gb_blue_ex_inter_all_op a ex:Smartphone ;
+    rdfs:label "iPhone 17 128GB Blue Ex Inter All Op" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 17 128GB Blue Ex Inter All Op" ;
+    ex:hasPrice 14500000 ;
+    ex:hasProcessor "A19 Pro" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" .
+
+ex:sku_iphone_17_pro_256gb_natural_titanium a ex:Smartphone ;
+    rdfs:label "iPhone 17 Pro 256GB Natural Titanium" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 17 Pro 256GB Natural Titanium" ;
+    ex:hasPrice 22999000 ;
+    ex:hasProcessor "A19 Pro" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Digimap" ;
+    ex:suitableFor "ConcertPhotography",
+        "Professional" .
+
+ex:sku_iphone_17_pro_max_1tb_deep_red_titanium a ex:Smartphone ;
+    rdfs:label "iPhone 17 Pro Max 1TB Deep Red Titanium" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone 17 Pro Max 1TB Deep Red Titanium" ;
+    ex:hasPrice 32999000 ;
+    ex:hasProcessor "A19 Pro" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" ;
+    ex:suitableFor "ConcertPhotography",
+        "Professional" .
+
+ex:sku_iphone_se_gen_4_128gb_midnight_2026_model a ex:Smartphone ;
+    rdfs:label "iPhone SE Gen 4 128GB Midnight (2026 Model)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone SE Gen 4 128GB Midnight (2026 Model)" ;
+    ex:hasPrice 8999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" .
+
+ex:sku_iphone_xr_64gb_coral_mulus_fullset a ex:Smartphone ;
+    rdfs:label "iPhone XR 64GB Coral (Mulus Fullset)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "iPhone XR 64GB Coral (Mulus Fullset)" ;
+    ex:hasPrice 2800000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Lucky Cell" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_itel_a80_4-64gb_hape_ojol a ex:Smartphone ;
+    rdfs:label "Itel A80 4/64GB (Hape Ojol)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Itel" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Itel A80 4/64GB (Hape Ojol)" ;
+    ex:hasPrice 1100000 ;
+    ex:hasProcessor "Unisoc SC9863A" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Kelontong Gadget" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_itel_s26_ultra_8-256gb_curved_screen a ex:Smartphone ;
+    rdfs:label "Itel S26 Ultra 8/256GB Curved Screen" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Itel" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Itel S26 Ultra 8/256GB Curved Screen" ;
+    ex:hasPrice 1899000 ;
+    ex:hasProcessor "Unisoc SC9863A" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Itel Official Store" ;
+    ex:suitableFor "ConcertPhotography",
+        "Elderly",
+        "Gaming",
+        "Ojol" .
+
+ex:sku_lenovo_legion_go_2_8.8_inch a ex:Smartphone ;
+    rdfs:label "Lenovo Legion Go 2 8.8 Inch" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Lenovo" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Lenovo Legion Go 2 8.8 Inch" ;
+    ex:hasPrice 13499000 ;
+    ex:hasProcessor "AMD Ryzen Z1 Extreme" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Lenovo Legion Store" .
+
+ex:sku_lg_wing_5g_rare_item a ex:Smartphone ;
+    rdfs:label "LG Wing 5G (Rare Item)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "LG Wing 5G (Rare Item)" ;
+    ex:hasPrice 3500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Batam" ;
+    ex:soldBy "Toko Hape Batam" ;
+    ex:suitableFor "Student" .
+
+ex:sku_macbook_air_m1_256gb_gold_dent_pojok a ex:Smartphone ;
+    rdfs:label "MacBook Air M1 256GB Gold (Dent Pojok)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "MacBook Air M1 256GB Gold (Dent Pojok)" ;
+    ex:hasPrice 6500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" .
+
+ex:sku_macbook_air_m2_256gb_midnight_cycle_count_500 a ex:Smartphone ;
+    rdfs:label "MacBook Air M2 256GB Midnight (Cycle Count 500)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "MacBook Air M2 256GB Midnight (Cycle Count 500)" ;
+    ex:hasPrice 9500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" .
+
+ex:sku_macbook_air_m4_13_inch_256gb_starlight a ex:Smartphone ;
+    rdfs:label "MacBook Air M4 13 Inch 256GB Starlight" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 12 ;
+    ex:hasModel "MacBook Air M4 13 Inch 256GB Starlight" ;
+    ex:hasPrice 18999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_macbook_pro_m4_pro_14_inch_512gb_space_black a ex:Smartphone ;
+    rdfs:label "MacBook Pro M4 Pro 14 Inch 512GB Space Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Apple" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "MacBook Pro M4 Pro 14 Inch 512GB Space Black" ;
+    ex:hasPrice 34999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "iBox" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_motorola_edge_50_pro_lavender a ex:Smartphone ;
+    rdfs:label "Motorola Edge 50 Pro Lavender" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Motorola Edge 50 Pro Lavender" ;
+    ex:hasPrice 8999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Sentra Ponsel" .
+
+ex:sku_motorola_razr_50_ultra_5g_peach_fuzz a ex:Smartphone ;
+    rdfs:label "Motorola Razr 50 Ultra 5G Peach Fuzz" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Motorola Razr 50 Ultra 5G Peach Fuzz" ;
+    ex:hasPrice 14999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Sentra Ponsel" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming" .
+
+ex:sku_msi_claw_2_ai_ultra a ex:Smartphone ;
+    rdfs:label "MSI Claw 2 AI Ultra" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "MSI" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "MSI Claw 2 AI Ultra" ;
+    ex:hasPrice 12999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "MSI Store" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming" .
+
+ex:sku_nintendo_switch_2_2026_neon_red-blue a ex:Smartphone ;
+    rdfs:label "Nintendo Switch 2 (2026) Neon Red/Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Nintendo" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Nintendo Switch 2 (2026) Neon Red/Blue" ;
+    ex:hasPrice 6999000 ;
+    ex:hasProcessor "NVIDIA Tegra X1+" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Nintendo Official" .
+
+ex:sku_nokia_110_4g_2025_yellow a ex:Smartphone ;
+    rdfs:label "Nokia 110 4G (2025) Yellow" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Nokia" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Nokia 110 4G (2025) Yellow" ;
+    ex:hasPrice 450000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Konter Pulsa Jaya" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_nokia_xr25_5g_rugged_phone a ex:Smartphone ;
+    rdfs:label "Nokia XR25 5G Rugged Phone" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Nokia" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Nokia XR25 5G Rugged Phone" ;
+    ex:hasPrice 7999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Nokia Official" .
+
+ex:sku_nothing_ear_4_ceramic_white a ex:Smartphone ;
+    rdfs:label "Nothing Ear (4) Ceramic White" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Nothing" ;
+    ex:hasMainCamera 0 ;
+    ex:hasModel "Nothing Ear (4) Ceramic White" ;
+    ex:hasPrice 2499000 ;
+    ex:hasProcessor "N/A (Aksesori)" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Urban Republic" ;
+    ex:suitableFor "Elderly",
+        "Ojol",
+        "Student" .
+
+ex:sku_nothing_phone_3_12-256gb_white a ex:Smartphone ;
+    rdfs:label "Nothing Phone (3) 12/256GB White" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Nothing" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Nothing Phone (3) 12/256GB White" ;
+    ex:hasPrice 8999000 ;
+    ex:hasProcessor "Snapdragon 8+ Gen 1" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Sentra Digital" .
+
+ex:sku_oppo_a99_5g_8-128gb_glowing_gold a ex:Smartphone ;
+    rdfs:label "OPPO A99 5G 8/128GB Glowing Gold" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "OPPO" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "OPPO A99 5G 8/128GB Glowing Gold" ;
+    ex:hasPrice 3299000 ;
+    ex:hasProcessor "Snapdragon 680" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "OPPO Official Store" ;
+    ex:suitableFor "Student" .
+
+ex:sku_oppo_find_x8_pro_12-256gb_bekas_fullset a ex:Smartphone ;
+    rdfs:label "OPPO Find X8 Pro 12/256GB (Bekas Fullset)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "OPPO" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "OPPO Find X8 Pro 12/256GB (Bekas Fullset)" ;
+    ex:hasPrice 11000000 ;
+    ex:hasProcessor "MediaTek Dimensity 9400" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Juragan Gadget Bekas" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_oppo_reno_13_5g_8-256gb_black a ex:Smartphone ;
+    rdfs:label "OPPO Reno 13 5G 8/256GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "OPPO" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "OPPO Reno 13 5G 8/256GB Black" ;
+    ex:hasPrice 6499000 ;
+    ex:hasProcessor "MediaTek Dimensity 8100" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" .
+
+ex:sku_oppo_reno_13_proplus_5g_12-512gb_glossy_purple a ex:Smartphone ;
+    rdfs:label "OPPO Reno 13 Pro+ 5G 12/512GB Glossy Purple" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "OPPO" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "OPPO Reno 13 Pro+ 5G 12/512GB Glossy Purple" ;
+    ex:hasPrice 9999000 ;
+    ex:hasProcessor "MediaTek Dimensity 8100" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "OPPO Official Store" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_playstation_5_pro_digital_edition a ex:Smartphone ;
+    rdfs:label "PlayStation 5 Pro Digital Edition" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Sony" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "PlayStation 5 Pro Digital Edition" ;
+    ex:hasPrice 11999000 ;
+    ex:hasProcessor "AMD Zen 2 + RDNA 2" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "PlayStation Sony" .
+
+ex:sku_poco_c75_4-128gb_green a ex:Smartphone ;
+    rdfs:label "POCO C75 4/128GB Green" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Poco" ;
+    ex:hasMainCamera 64 ;
+    ex:hasModel "POCO C75 4/128GB Green" ;
+    ex:hasPrice 1599000 ;
+    ex:hasProcessor "MediaTek Dimensity" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Poco Official" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_poco_f7_pro_12-512gb_yellow_snapdragon_8_gen_4 a ex:Smartphone ;
+    rdfs:label "POCO F7 Pro 12/512GB Yellow (Snapdragon 8 Gen 4)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Poco" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "POCO F7 Pro 12/512GB Yellow (Snapdragon 8 Gen 4)" ;
+    ex:hasPrice 7299000 ;
+    ex:hasProcessor "MediaTek Dimensity" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Poco Official" ;
+    ex:suitableFor "Gaming" .
+
+ex:sku_poco_m7_pro_5g_6-128gb_yellow a ex:Smartphone ;
+    rdfs:label "POCO M7 Pro 5G 6/128GB Yellow" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Poco" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "POCO M7 Pro 5G 6/128GB Yellow" ;
+    ex:hasPrice 2799000 ;
+    ex:hasProcessor "MediaTek Dimensity" ;
+    ex:hasRAM 6 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Poco Official" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_poco_x8_pro_5g_8-256gb_black a ex:Smartphone ;
+    rdfs:label "POCO X8 Pro 5G 8/256GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Poco" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "POCO X8 Pro 5G 8/256GB Black" ;
+    ex:hasPrice 4899000 ;
+    ex:hasProcessor "MediaTek Dimensity" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Poco Official" ;
+    ex:suitableFor "Student" .
+
+ex:sku_realme_14_proplus_5g_12-256gb_curved_display a ex:Smartphone ;
+    rdfs:label "Realme 14 Pro+ 5G 12/256GB Curved Display" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Realme" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Realme 14 Pro+ 5G 12/256GB Curved Display" ;
+    ex:hasPrice 5699000 ;
+    ex:hasProcessor "MediaTek Dimensity 7300" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Realme Official" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_realme_c75_6-128gb_nfc a ex:Smartphone ;
+    rdfs:label "Realme C75 6/128GB NFC" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Realme" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Realme C75 6/128GB NFC" ;
+    ex:hasPrice 1999000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 6 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Realme Official" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_realme_gt_8_16-1tb_racing_yellow_snapdragon_8_gen_4 a ex:Smartphone ;
+    rdfs:label "Realme GT 8 16/1TB Racing Yellow (Snapdragon 8 Gen 4)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Realme" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Realme GT 8 16/1TB Racing Yellow (Snapdragon 8 Gen 4)" ;
+    ex:hasPrice 9499000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 4" ;
+    ex:hasRAM 16 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Realme Official" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming" .
+
+ex:sku_realme_narzo_80_5g_6-128gb_blue a ex:Smartphone ;
+    rdfs:label "Realme Narzo 80 5G 6/128GB Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Realme" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Realme Narzo 80 5G 6/128GB Blue" ;
+    ex:hasPrice 2299000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 6 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Realme Official" ;
+    ex:suitableFor "Elderly",
+        "Ojol",
+        "Student" .
+
+ex:sku_redmagic_9_pro_16-512gb_cyclone_bekas_mulus a ex:Smartphone ;
+    rdfs:label "RedMagic 9 Pro 16/512GB Cyclone (Bekas Mulus)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "RedMagic 9 Pro 16/512GB Cyclone (Bekas Mulus)" ;
+    ex:hasPrice 9500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 16 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Toko Gaming Jkt" .
+
+ex:sku_redmi_14c_4-128gb_blue a ex:Smartphone ;
+    rdfs:label "Redmi 14C 4/128GB Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Redmi 14C 4/128GB Blue" ;
+    ex:hasPrice 1399000 ;
+    ex:hasProcessor "MediaTek Helio" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Mi Store" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_redmi_buds_7_active_black a ex:Smartphone ;
+    rdfs:label "Redmi Buds 7 Active Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Redmi Buds 7 Active Black" ;
+    ex:hasPrice 299000 ;
+    ex:hasProcessor "MediaTek Helio" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Xiaomi Official" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_samsung_galaxy_a05_4-64gb_clearance a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A05 4/64GB (Clearance)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 0 ;
+    ex:hasModel "Samsung Galaxy A05 4/64GB (Clearance)" ;
+    ex:hasPrice 1299000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 64 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_samsung_galaxy_a06s_4-128gb_black a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A06s 4/128GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A06s 4/128GB Black" ;
+    ex:hasPrice 1799000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 4 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:sku_samsung_galaxy_a16_5g_6-128gb_blue a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A16 5G 6/128GB Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A16 5G 6/128GB Blue" ;
+    ex:hasPrice 2899000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 6 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Cellular World" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_samsung_galaxy_a26_5g_8-128gb_silver a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A26 5G 8/128GB Silver" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A26 5G 8/128GB Silver" ;
+    ex:hasPrice 3799000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Student" .
+
+ex:sku_samsung_galaxy_a36_5g_8-128gb_awesome_graphite a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A36 5G 8/128GB Awesome Graphite" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A36 5G 8/128GB Awesome Graphite" ;
+    ex:hasPrice 4499000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" ;
+    ex:suitableFor "Student" .
+
+ex:sku_samsung_galaxy_a36_5g_8-256gb_awesome_lime a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A36 5G 8/256GB Awesome Lime" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A36 5G 8/256GB Awesome Lime" ;
+    ex:hasPrice 4999000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Student" .
+
+ex:sku_samsung_galaxy_a56_5g_8-128gb_white a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A56 5G 8/128GB White" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A56 5G 8/128GB White" ;
+    ex:hasPrice 5999000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" .
+
+ex:sku_samsung_galaxy_a56_5g_8-256gb_awesome_blue a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy A56 5G 8/256GB Awesome Blue" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy A56 5G 8/256GB Awesome Blue" ;
+    ex:hasPrice 6499000 ;
+    ex:hasProcessor "MediaTek Helio G99" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Cellular World" .
+
+ex:sku_samsung_galaxy_buds_4_pro_white a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy Buds 4 Pro White" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Samsung Galaxy Buds 4 Pro White" ;
+    ex:hasPrice 2999000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_samsung_galaxy_m56_5g_8-256gb_battery_7000mah a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy M56 5G 8/256GB Battery 7000mAh" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy M56 5G 8/256GB Battery 7000mAh" ;
+    ex:hasPrice 5299000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta Utara" ;
+    ex:soldBy "Toko Hape Mangga Dua" .
+
+ex:sku_samsung_galaxy_s20_fe_snapdragon_layar_shadow a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S20 FE Snapdragon (Layar Shadow)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy S20 FE Snapdragon (Layar Shadow)" ;
+    ex:hasPrice 2100000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "PStore" ;
+    ex:suitableFor "Elderly",
+        "Ojol",
+        "Student" .
+
+ex:sku_samsung_galaxy_s23_128gb_green_batangan a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S23 128GB Green (Batangan)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 50 ;
+    ex:hasModel "Samsung Galaxy S23 128GB Green (Batangan)" ;
+    ex:hasPrice 6200000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 2" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Jakarta Pusat (Roxy)" ;
+    ex:soldBy "Roxy Mas Cell" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_samsung_galaxy_s24_ultra_256gb_titanium_gray_ex_inter a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S24 Ultra 256GB Titanium Gray (Ex Inter)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 200 ;
+    ex:hasModel "Samsung Galaxy S24 Ultra 256GB Titanium Gray (Ex Inter)" ;
+    ex:hasPrice 12500000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 3" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming" .
+
+ex:sku_samsung_galaxy_s25_fe_8-256gb_mint_bekas_garansi a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S25 FE 8/256GB Mint (Bekas Garansi)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy S25 FE 8/256GB Mint (Bekas Garansi)" ;
+    ex:hasPrice 7500000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Juragan Gadget Bekas" .
+
+ex:sku_samsung_galaxy_s26_8-256gb_onyx_black a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S26 8/256GB Onyx Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy S26 8/256GB Onyx Black" ;
+    ex:hasPrice 13999000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" .
+
+ex:sku_samsung_galaxy_s26_plus_12-512gb_cobalt_violet a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S26 Plus 12/512GB Cobalt Violet" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy S26 Plus 12/512GB Cobalt Violet" ;
+    ex:hasPrice 17499000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_samsung_galaxy_s26_ultra_1tb_titanium_gray_ai_gen_3 a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy S26 Ultra 1TB Titanium Gray (AI Gen 3)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Samsung Galaxy S26 Ultra 1TB Titanium Gray (AI Gen 3)" ;
+    ex:hasPrice 26999000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming",
+        "Professional" .
+
+ex:sku_samsung_galaxy_tab_s10_fe_128gb_wifi a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy Tab S10 FE 128GB WiFi" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy Tab S10 FE 128GB WiFi" ;
+    ex:hasPrice 6499000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" .
+
+ex:sku_samsung_galaxy_watch_8_44mm_bt a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy Watch 8 44mm BT" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 0 ;
+    ex:hasModel "Samsung Galaxy Watch 8 44mm BT" ;
+    ex:hasPrice 4299000 ;
+    ex:hasProcessor "Exynos / Snapdragon" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Samsung Official Store" ;
+    ex:suitableFor "Student" .
+
+ex:sku_samsung_galaxy_z_flip_6_256gb_mint_demo_unit a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy Z Flip 6 256GB Mint (Demo Unit)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy Z Flip 6 256GB Mint (Demo Unit)" ;
+    ex:hasPrice 8999000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 3" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Clearance" .
+
+ex:sku_samsung_galaxy_z_fold_7_512gb_phantom_black_bekas_mulus a ex:Smartphone ;
+    rdfs:label "Samsung Galaxy Z Fold 7 512GB Phantom Black (Bekas Mulus)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Samsung" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Samsung Galaxy Z Fold 7 512GB Phantom Black (Bekas Mulus)" ;
+    ex:hasPrice 19500000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 3" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Juragan Gadget Bekas" ;
+    ex:suitableFor "Professional" .
+
+ex:sku_sharp_aquos_r9s_pro_leica a ex:Smartphone ;
+    rdfs:label "Sharp Aquos R9s Pro (Leica)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Sharp Aquos R9s Pro (Leica)" ;
+    ex:hasPrice 12999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" .
+
+ex:sku_sony_wh-1000xm6_noise_cancelling a ex:Smartphone ;
+    rdfs:label "Sony WH-1000XM6 Noise Cancelling" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Sony" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Sony WH-1000XM6 Noise Cancelling" ;
+    ex:hasPrice 5499000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Urban Republic" .
+
+ex:sku_sony_xperia_1_vi_12-256gb_khaki_green a ex:Smartphone ;
+    rdfs:label "Sony Xperia 1 VI 12/256GB Khaki Green" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Sony" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Sony Xperia 1 VI 12/256GB Khaki Green" ;
+    ex:hasPrice 14500000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 2" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Sony Center (Import)" .
+
+ex:sku_sony_xperia_5_iv_128gb_green_docomo a ex:Smartphone ;
+    rdfs:label "Sony Xperia 5 IV 128GB Green (Docomo)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Sony" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Sony Xperia 5 IV 128GB Green (Docomo)" ;
+    ex:hasPrice 3500000 ;
+    ex:hasProcessor "Snapdragon 8 Gen 2" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Batam" ;
+    ex:soldBy "Gadget Batam" ;
+    ex:suitableFor "Student" .
+
+ex:sku_steam_deck_oled_1tb_second_mulus a ex:Smartphone ;
+    rdfs:label "Steam Deck OLED 1TB (Second Mulus)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Valve" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Steam Deck OLED 1TB (Second Mulus)" ;
+    ex:hasPrice 9500000 ;
+    ex:hasProcessor "AMD Zen 2 APU" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "GameStop Indo" .
+
+ex:sku_tecno_camon_40_premier_512gb_ceramic a ex:Smartphone ;
+    rdfs:label "Tecno Camon 40 Premier 512GB Ceramic" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Tecno" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Tecno Camon 40 Premier 512GB Ceramic" ;
+    ex:hasPrice 6299000 ;
+    ex:hasProcessor "MediaTek Dimensity 8020" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Tecno Official" .
+
+ex:sku_tecno_pova_7_pro_5g_8-256gb_led_back a ex:Smartphone ;
+    rdfs:label "Tecno Pova 7 Pro 5G 8/256GB LED Back" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Tecno" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Tecno Pova 7 Pro 5G 8/256GB LED Back" ;
+    ex:hasPrice 2999000 ;
+    ex:hasProcessor "MediaTek Helio G85" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Tecno Official" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_unihertz_titan_slim_keyboard_qwerty a ex:Smartphone ;
+    rdfs:label "Unihertz Titan Slim (Keyboard QWERTY)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Unknown" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Unihertz Titan Slim (Keyboard QWERTY)" ;
+    ex:hasPrice 4500000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Blackberry Reborn" ;
+    ex:suitableFor "Student" .
+
+ex:sku_vivo_v35_5g_8-256gb_velvet_red a ex:Smartphone ;
+    rdfs:label "Vivo V35 5G 8/256GB Velvet Red" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Vivo" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Vivo V35 5G 8/256GB Velvet Red" ;
+    ex:hasPrice 5999000 ;
+    ex:hasProcessor "Snapdragon 7 Gen 3" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Vivo Official Store" .
+
+ex:sku_vivo_v35_pro_5g_12-512gb_zeiss_camera a ex:Smartphone ;
+    rdfs:label "Vivo V35 Pro 5G 12/512GB Zeiss Camera" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Vivo" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Vivo V35 Pro 5G 12/512GB Zeiss Camera" ;
+    ex:hasPrice 8999000 ;
+    ex:hasProcessor "Snapdragon 7 Gen 3" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Vivo Official Store" .
+
+ex:sku_vivo_x100_pro_5g_ex_reviewer a ex:Smartphone ;
+    rdfs:label "Vivo X100 Pro 5G (Ex Reviewer)" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Vivo" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Vivo X100 Pro 5G (Ex Reviewer)" ;
+    ex:hasPrice 9500000 ;
+    ex:hasProcessor "MediaTek Dimensity 9300" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Renan Store" ;
+    ex:suitableFor "ConcertPhotography" .
+
+ex:sku_vivo_y100s_5g_8-128gb_green a ex:Smartphone ;
+    rdfs:label "Vivo Y100s 5G 8/128GB Green" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Vivo" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Vivo Y100s 5G 8/128GB Green" ;
+    ex:hasPrice 2899000 ;
+    ex:hasProcessor "MediaTek Dimensity" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta Pusat (Roxy)" ;
+    ex:soldBy "Toko Hape Roxy" ;
+    ex:suitableFor "Ojol",
+        "Student" .
+
+ex:sku_xiaomi_14t_pro_12-512gb_titan_gray a ex:Smartphone ;
+    rdfs:label "Xiaomi 14T Pro 12/512GB Titan Gray" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Xiaomi 14T Pro 12/512GB Titan Gray" ;
+    ex:hasPrice 7999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Clearance" .
+
+ex:sku_xiaomi_16_12-256gb_black a ex:Smartphone ;
+    rdfs:label "Xiaomi 16 12/256GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "Xiaomi 16 12/256GB Black" ;
+    ex:hasPrice 10999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Mi Store" .
+
+ex:sku_xiaomi_16_ultra_16-512gb_leica_optic_gen_2 a ex:Smartphone ;
+    rdfs:label "Xiaomi 16 Ultra 16/512GB Leica Optic Gen 2" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Xiaomi 16 Ultra 16/512GB Leica Optic Gen 2" ;
+    ex:hasPrice 18999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 16 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 512 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Xiaomi Official" ;
+    ex:suitableFor "ConcertPhotography",
+        "Gaming",
+        "Professional" .
+
+ex:sku_xiaomi_pad_8_pro_12-256gb_hyperos a ex:Smartphone ;
+    rdfs:label "Xiaomi Pad 8 Pro 12/256GB HyperOS" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Xiaomi Pad 8 Pro 12/256GB HyperOS" ;
+    ex:hasPrice 5999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 12 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Online (Indonesia)" ;
+    ex:soldBy "Xiaomi Official" .
+
+ex:sku_xiaomi_redmi_note_14_4g_8-128gb_black a ex:Smartphone ;
+    rdfs:label "Xiaomi Redmi Note 14 4G 8/128GB Black" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Xiaomi Redmi Note 14 4G 8/128GB Black" ;
+    ex:hasPrice 2499000 ;
+    ex:hasProcessor "MediaTek Dimensity 7025" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 90 ;
+    ex:hasStorage 128 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" ;
+    ex:suitableFor "Elderly",
+        "Ojol",
+        "Student" .
+
+ex:sku_xiaomi_redmi_note_14_pro_5g_8-256gb_purple a ex:Smartphone ;
+    rdfs:label "Xiaomi Redmi Note 14 Pro 5G 8/256GB Purple" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "Xiaomi" ;
+    ex:hasMainCamera 108 ;
+    ex:hasModel "Xiaomi Redmi Note 14 Pro 5G 8/256GB Purple" ;
+    ex:hasPrice 3999000 ;
+    ex:hasProcessor "MediaTek Dimensity 7025" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 120 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto true ;
+    ex:locatedIn "Jakarta" ;
+    ex:soldBy "Erafone Digital" ;
+    ex:suitableFor "ConcertPhotography",
+        "Student" .
+
+ex:sku_zte_blade_v60_design_8-256gb a ex:Smartphone ;
+    rdfs:label "ZTE Blade V60 Design 8/256GB" ;
+    ex:batteryCapacity 5000 ;
+    ex:hasBrand "ZTE" ;
+    ex:hasMainCamera 48 ;
+    ex:hasModel "ZTE Blade V60 Design 8/256GB" ;
+    ex:hasPrice 1999000 ;
+    ex:hasProcessor "Unknown" ;
+    ex:hasRAM 8 ;
+    ex:hasRefreshRate 60 ;
+    ex:hasStorage 256 ;
+    ex:hasTelephoto false ;
+    ex:locatedIn "Indonesia" ;
+    ex:soldBy "Toko Kelontong Gadget" ;
+    ex:suitableFor "Elderly",
+        "Ojol" .
+
+ex:soldBy a rdf:Property .
+
+ex:suitableFor a rdf:Property .
+

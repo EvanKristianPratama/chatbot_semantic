@@ -102,7 +102,7 @@ const SidebarFooter = memo(function SidebarFooter() {
                 Gadget Semantic AI © {currentYear}
             </p>
             <p className="footer-by">
-                by Evan Kristian Pratama
+                by Prompt Engineering
             </p>
             <div className="footer-socials">
                 <a
