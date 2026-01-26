@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Configuration for Python Backend
-const PYTHON_BACKEND_URL = 'http://127.0.0.1:5001/chat';
+const PYTHON_BACKEND_URL = 'https://chatbot-semantic.vercel.app/chat';
 
 export async function POST(req: NextRequest) {
     try {
