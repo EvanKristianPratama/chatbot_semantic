@@ -344,6 +344,38 @@ def call_groq_llm(user_message, facts, use_case_tags=None):
     if not GROQ_API_KEY:
         return "⚠️ Server Error: GROQ_API_KEY belum diset di backend."
     
+    # --- SMART FILTERING: Prioritize products matching user query ---
+    import re
+    
+    # Extract potential model keywords from user message (e.g., "17", "Pro", "Ultra")
+    user_query_lower = user_message.lower()
+    
+    # Find specific model numbers (e.g., 17, 16, 15, SE)
+    model_keywords = re.findall(r'\b(17|16|15|14|13|12|11|xr|xs|se|pro|max|ultra|plus)\b', user_query_lower)
+    
+    if model_keywords and facts:
+        # Split into matching and non-matching products
+        matching_facts = []
+        other_facts = []
+        
+        for f in facts:
+            model_lower = f['model'].lower()
+            # Check if any keyword matches the model
+            if any(kw in model_lower for kw in model_keywords):
+                matching_facts.append(f)
+            else:
+                other_facts.append(f)
+        
+        # Combine: matching first, then others (up to 5 total)
+        selected_facts = matching_facts[:5]  # Take matching ones first
+        if len(selected_facts) < 5:
+            selected_facts.extend(other_facts[:5 - len(selected_facts)])
+        
+        print(f"🎯 Smart Filter: {len(matching_facts)} matching, showing {len(selected_facts)}")
+    else:
+        # No specific keywords, use original top 5 cheapest
+        selected_facts = facts[:5] if facts else []
+    
     # Susun System Prompt dengan Data
     system_prompt = """Kamu adalah GadgetBot, asisten penjualan HP yang cerdas dan ramah.
 Tugasmu adalah menjawab pertanyaan user BERDASARKAN data fakta yang diberikan di bawah ini.
@@ -351,10 +383,10 @@ JANGAN mengarang spesifikasi atau harga sendiri. Gunakan HANYA data yang tersedi
 
 DATA FAKTA (Dari Knowledge Graph & Database Toko):
 """
-    if not facts:
+    if not selected_facts:
         system_prompt += "Tidak ditemukan produk yang cocok dengan kriteria dalam database kami.\n"
     else:
-        for idx, f in enumerate(facts[:5]):  # Limit 5 results
+        for idx, f in enumerate(selected_facts):
             tags_str = ", ".join(f.get('tags', [])) if f.get('tags') else ""
             system_prompt += f"""
 {idx+1}. **{f['model']}**
